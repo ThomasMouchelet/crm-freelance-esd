@@ -1,6 +1,10 @@
 <div style="display:flex;">
-    <img src="https://d31ezp3r8jwmks.cloudfront.net/P4LMkQbCoYdT6NiE8ZjETEbw" width="300px">
-    <img src="https://api-platform.com/logo.png" width="300px">
+    <div>
+        <img src="https://d31ezp3r8jwmks.cloudfront.net/P4LMkQbCoYdT6NiE8ZjETEbw" width="300px">
+    </div>
+    <div>
+        <img src="https://api-platform.com/logo.png" width="300px">
+    </div>
 </div>
 
 # Docker
