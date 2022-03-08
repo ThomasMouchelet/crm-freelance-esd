@@ -1,34 +1,35 @@
-<img src="https://d31ezp3r8jwmks.cloudfront.net/P4LMkQbCoYdT6NiE8ZjETEbw" width="300px">
-<img src="https://api-platform.com/logo.png" width="300px">
+<div style="display:flex;">
+    <img src="https://d31ezp3r8jwmks.cloudfront.net/P4LMkQbCoYdT6NiE8ZjETEbw" width="300px">
+    <img src="https://api-platform.com/logo.png" width="300px">
+</div>
 
 # Docker
-
-### Monter les containers
+Monter les containers
 ```bash
 docker-compose up -d
 ```
-### Afficher la liste des containers
+Afficher la liste des containers
 ```bash
 docker-compose ps
 ```
-### Stopper les containers
+Stopper les containers
 ```bash
 docker-compose down
 ```
-### Supprimer les containers et les images
+Supprimer les containers et les images
 ```bash
 docker system prune -a
 ```
-### Entrer dans un container
+Entrer dans un container
 ```bash
 docker exec -it <container name> /bin/sh
 ```
-### Installer symfony dans le container php
+Installer symfony dans le container php
 ```bash
 docker exec -it <container name php> /bin/sh
 composer create-project symfony/skeleton .
 ```
-### Entrer dans le container database
+Entrer dans le container database
 ```bash
 docker exec -it <container name database> /bin/sh
 mysql --host=localhost --user=symfony --password=symfony
