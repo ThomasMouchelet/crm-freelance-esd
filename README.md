@@ -1,5 +1,5 @@
-<img src="https://d31ezp3r8jwmks.cloudfront.net/P4LMkQbCoYdT6NiE8ZjETEbw">
-<img src="https://api-platform.com/logo.png">
+<img src="https://d31ezp3r8jwmks.cloudfront.net/P4LMkQbCoYdT6NiE8ZjETEbw" width="300px">
+<img src="https://api-platform.com/logo.png" width="300px">
 
 # Docker
 
