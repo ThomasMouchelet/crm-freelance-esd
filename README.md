@@ -1,3 +1,8 @@
+<img src="https://d31ezp3r8jwmks.cloudfront.net/P4LMkQbCoYdT6NiE8ZjETEbw">
+<img src="https://api-platform.com/logo.png">
+
+# Docker
+
 ### Monter les containers
 ```bash
 docker-compose up -d
@@ -30,4 +35,39 @@ mysql --host=localhost --user=symfony --password=symfony
 SHOW DATABASES;
 use symfony_docker;
 show tables;
+```
+
+# Symfony
+
+Créer une entitée
+```bash
+php bin/console make:entity
+```
+Générer et exécuter les migrations
+```bash
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+```
+Exécuter les fixtures
+```bash
+php bin/console doctrine:fixtures:load
+```
+Create form
+```bash
+php bin/console make:form
+```
+Create user
+```bash
+php bin/console make:user
+php bin/console make:controller
+> SecurityController
+php bin/console make:auth
+```
+Create login form
+```bash
+php bin/console make:auth
+```
+Create registration form
+```bash
+php bin/console make:registration-form
 ```
