@@ -3,6 +3,7 @@ import InvoiceList from './components/InvoiceList';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import CustomerList from './components/CustomerList';
 import Navbar from './components/Navbar';
+import FormCustomer from './components/FormCustomer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path='/'  element={<InvoiceList />} />
         <Route path='/customers'  element={<CustomerList />} />
+        <Route path="/customers/create" element={<FormCustomer />} />
       </Routes>
     </BrowserRouter >
   );

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { findAll } from "../services/customers.service";
 
 const CustomerList = () => {
@@ -18,22 +19,26 @@ const CustomerList = () => {
     }
 
     return ( 
-        <table>
-            <thead>
-                <tr>
-                    <th>email</th>
-                    <th>Company Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                {customers.map(customer => (
-                    <tr key={customer.id}>
-                        <td>{customer.email}</td>
-                        <td>{customer.companyName}</td>
+        <div>
+            <Link to="/customers/create" >New cutomer</Link>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>email</th>
+                        <th>Company Name</th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {customers.map(customer => (
+                        <tr key={customer.id}>
+                            <td>{customer.email}</td>
+                            <td>{customer.companyName}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
      );
 }
  

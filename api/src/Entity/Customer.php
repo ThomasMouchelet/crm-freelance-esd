@@ -15,7 +15,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
         "GET" => [
             'normalization_context' => ['groups' => 'read:Customer:item']
         ]
-    ]
+    ],
+    order: ["id" => "DESC"]
 )]
 #[ORM\Entity(repositoryClass: CustomerRepository::class)]
 class Customer
