@@ -25,13 +25,13 @@ migrate: ## exécuter les migrations
 fixtures: ## exécuter les fixtures
 	$(sy) d:f:l -q
 
-.PHONY: npm-start
-npm-start: ## lancer le front React
-	$(sy) d:f:l -q
+.PHONY: start
+start: ## lancer le front React
+	cd front && npm start
 
 .PHONY: clear
 clear: ## clear le cache Symfony
 	$(sy) cache:clear
 
 .PHONY: init
-init: up install migrate fixtures npm-start
+init: up install migrate fixtures start
