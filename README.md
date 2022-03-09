@@ -7,6 +7,19 @@
     </div>
 </div>
 
+# Start project fast
+```bash
+make init
+```
+# Start project manualy
+```bash
+git clone https://github.com/ThomasMouchelet/crm-freelance-esd
+docker exec crm-php php bin/console composer install
+docker exec crm-php php bin/console d:m:m -q
+docker exec crm-php php bin/console d:f:l -q
+cd front && npm i && npm start
+```
+
 # Docker
 Monter les containers
 ```bash
@@ -27,6 +40,8 @@ docker system prune -a
 Entrer dans un container
 ```bash
 docker exec -it <container name> /bin/sh
+ou
+docker exec -it crm-php /bin/zsh
 ```
 Installer symfony dans le container php
 ```bash
@@ -65,9 +80,12 @@ Create user
 ```bash
 php bin/console make:user
 ```
-
-
+Load fixtures
 ```bash
 php bin/console doctrine:fixtures:load
 php bin/console d:f:l
+```
+Clear cache
+```bash
+php bin/console cache:clear
 ```

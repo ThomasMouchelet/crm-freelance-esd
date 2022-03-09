@@ -20,6 +20,7 @@ services:
       - 9000:9000
     volumes:
       - ./api:/var/www/symfony_docker
+      - ~/.bash_history:/root/.bash_history
     restart: on-failure
   database:
     image: mysql:8.0
