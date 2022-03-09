@@ -12,7 +12,6 @@ const InvoiceList = () => {
         try {
             const data = await findAll()
             setInvoices(data)
-            console.log(data)
         } catch (error) {
             console.log(error)
         }

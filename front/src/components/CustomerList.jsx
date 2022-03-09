@@ -1,4 +1,22 @@
+import { useEffect, useState } from "react";
+import { findAll } from "../services/customers.service";
+
 const CustomerList = () => {
+    const [customers, setCustomers] = useState([])
+
+    useEffect(() => {
+        fetchAll()
+    },[])
+
+    const fetchAll = async () => {
+        try {
+            const data = await findAll()
+            setCustomers(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return ( 
         <table>
             <thead>
@@ -8,10 +26,12 @@ const CustomerList = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>test@test.com</td>
-                    <td>Company 1</td>
-                </tr>
+                {customers.map(customer => (
+                    <tr key={customer.id}>
+                        <td>{customer.email}</td>
+                        <td>{customer.companyName}</td>
+                    </tr>
+                ))}
             </tbody>
         </table>
      );

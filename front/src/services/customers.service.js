@@ -1,7 +1,7 @@
 import api from "./api"
 
 function findAll(){
-    return api.get('/invoices')
+    return api.get('/customers')
         .then(res => res.data['hydra:member'])
 }
 
