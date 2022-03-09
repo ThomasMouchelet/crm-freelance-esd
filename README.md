@@ -65,3 +65,9 @@ Create user
 ```bash
 php bin/console make:user
 ```
+
+
+```bash
+php bin/console doctrine:fixtures:load
+php bin/console d:f:l
+```

@@ -29,7 +29,7 @@ const InvoiceList = () => {
             </thead>
             <tbody>
                 {invoices.map(invoice => (
-                    <tr>
+                    <tr key={invoice.id}>
                         <td>{invoice.amount}</td>
                         <td>{invoice.status}</td>
                         <td>{invoice.customer.companyName}</td>
