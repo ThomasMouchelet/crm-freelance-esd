@@ -1,11 +1,12 @@
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import FormInvoice from "../components/FormInvoice";
+import { INVOICES_PATH } from "./config";
 
 const InvoicesRoutes = () => {
     return ( 
-        <>
-            <Route path="/invoices/create" element={<FormInvoice />} />
-        </>
+        <Routes>
+            <Route path={`${INVOICES_PATH}/create`} element={<FormInvoice />} />
+        </Routes>
      );
 }
  
