@@ -14,6 +14,7 @@ make init
 # Start project manualy
 ```bash
 git clone https://github.com/ThomasMouchelet/crm-freelance-esd
+docker-compose up -d --build
 docker exec crm-php php bin/console composer install
 docker exec crm-php php bin/console d:m:m -q
 docker exec crm-php php bin/console d:f:l -q
