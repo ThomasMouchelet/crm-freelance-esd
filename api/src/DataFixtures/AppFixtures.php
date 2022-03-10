@@ -23,9 +23,7 @@ class AppFixtures extends Fixture
                 ->setCompanyName($faker->words(2, true))
             ;
 
-            $manager->persist($customer);
-
-            for ($i=0; $i < rand(2, 9); $i++) { 
+            for ($j=0; $j < rand(2, 9); $j++) { 
                 $invoice = new Invoice();
                 $invoice
                     ->setAmount($faker->numberBetween(900, 8000))
@@ -36,6 +34,8 @@ class AppFixtures extends Fixture
 
                 $manager->persist($invoice);
             }
+
+            $manager->persist($customer);
         }
         
 
