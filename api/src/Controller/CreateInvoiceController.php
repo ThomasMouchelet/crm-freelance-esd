@@ -13,8 +13,7 @@ class CreateInvoiceController extends AbstractController
     {
         $data->setSendingAt(new DateTime());
 
-        if(!is_numeric( $data->getAmount()))
-            throw new Exception("Error type of amount", 1);
+        if(!is_numeric( $data->getAmount())) throw new Exception("Error type of amount", 1);
             
         return $data;
     }
