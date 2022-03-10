@@ -37,5 +37,9 @@ start: ## lancer le front React
 clear: ## clear le cache Symfony
 	$(sy) cache:clear
 
+.PHONY: jwt
+jwt: ## clear le cache Symfony
+	$(sy) lexik:jwt:generate-keypair
+
 .PHONY: init
-init: up install migrations fixtures start
+init: up install migrations fixtures jwt start
