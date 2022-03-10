@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { INVOICES_CREATE } from "../routes/config";
 import { findAll } from "../services/invoices.service";
 
 const InvoiceList = () => {
@@ -19,7 +21,7 @@ const InvoiceList = () => {
 
     return ( 
         <div>
-            {/* <Link to="/invoices/create">New invoice</Link> */}
+            <Link to={INVOICES_CREATE}>New invoice</Link>
             <table>
                 <thead>
                     <tr>
