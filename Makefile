@@ -27,7 +27,7 @@ fixtures: ## exécuter les fixtures
 
 .PHONY: start
 start: ## lancer le front React
-	cd front && npm start
+	cd front && npm i && npm start
 
 .PHONY: clear
 clear: ## clear le cache Symfony

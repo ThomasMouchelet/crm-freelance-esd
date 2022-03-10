@@ -1,18 +1,18 @@
 import './App.css';
-import InvoiceList from './components/InvoiceList';
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import CustomerList from './components/CustomerList';
+import {BrowserRouter, Routes} from "react-router-dom"
 import Navbar from './components/Navbar';
-import FormCustomer from './components/FormCustomer';
+import CustomersRoutes from "./routes/CustomersRoutes"
+import InvoicesRoutes from './routes/InvoicesRoutes';
+import MainRoutes from './routes/MainRoutes';
 
 function App() {
   return (
     <BrowserRouter >
       <Navbar />
       <Routes>
-        <Route path='/'  element={<InvoiceList />} />
-        <Route path='/customers'  element={<CustomerList />} />
-        <Route path="/customers/create" element={<FormCustomer />} />
+        <MainRoutes />
+        <CustomersRoutes />
+        <InvoicesRoutes />
       </Routes>
     </BrowserRouter >
   );

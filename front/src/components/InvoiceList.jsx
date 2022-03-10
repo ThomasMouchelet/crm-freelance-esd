@@ -18,24 +18,27 @@ const InvoiceList = () => {
     }
 
     return ( 
-        <table>
-            <thead>
-                <tr>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Company Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                {invoices.map(invoice => (
-                    <tr key={invoice.id}>
-                        <td>{invoice.amount}</td>
-                        <td>{invoice.status}</td>
-                        <td>{invoice.customer.companyName}</td>
+        <div>
+            {/* <Link to="/invoices/create">New invoice</Link> */}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Company Name</th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {invoices.map(invoice => (
+                        <tr key={invoice.id}>
+                            <td>{invoice.amount}</td>
+                            <td>{invoice.status}</td>
+                            <td>{invoice.customer.companyName}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
      );
 }
  
