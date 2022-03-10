@@ -11,8 +11,10 @@ use Symfony\Component\Serializer\Annotation\Groups;
     collectionOperations:[
         "GET" => [
             "normalization_context" => ["groups" => "read:Invoice:collection"]
-        ]
-    ]
+        ],
+        "POST"
+    ],
+    order: ["id" => "DESC"]
 )]
 #[ORM\Entity(repositoryClass: InvoiceRepository::class)]
 class Invoice
@@ -37,7 +39,7 @@ class Invoice
         "read:Customer:item",
         "read:Invoice:collection"
     ])]
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'datetime', nullable: true)]
     private $sendingAt;
 
     #[Groups([

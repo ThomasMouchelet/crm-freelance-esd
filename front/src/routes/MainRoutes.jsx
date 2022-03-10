@@ -4,7 +4,7 @@ import InvoiceList from "../components/InvoiceList";
 const MainRoutes = () => {
     return ( 
         <Routes>
-            <Route path='/'  element={<InvoiceList />} />
+            <Route exact path='/'  element={<InvoiceList />} />
         </Routes>
      );
 }

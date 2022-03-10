@@ -9,6 +9,7 @@ function App() {
   return (
     <BrowserRouter >
       <Navbar />
+      
       <MainRoutes />
       <CustomersRoutes />
       <InvoicesRoutes />

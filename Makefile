@@ -18,7 +18,11 @@ install: ## Installer les dépendances symfony
 	$(de) composer install
 
 .PHONY: migrate
-migrate: ## exécuter les migrations
+migrate: ## Installer les dépendances symfony
+	$(sy) make:migration
+
+.PHONY: migrations
+migrations: ## exécuter les migrations
 	$(sy) d:m:m -q
 
 .PHONY: fixtures
@@ -34,4 +38,4 @@ clear: ## clear le cache Symfony
 	$(sy) cache:clear
 
 .PHONY: init
-init: up install migrate fixtures start
+init: up install migrations fixtures start
