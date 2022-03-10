@@ -25,7 +25,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     public function getUsername(){
-        $this->username = $this->email;
+        return $this->email;
     }
 
     public function getId(): ?int
