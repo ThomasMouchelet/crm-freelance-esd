@@ -18,7 +18,12 @@ function create(credentials) {
         .then(res => res.data)
 }
 
+function remove(id) {
+    return api.delete(`/invoices/${id}`)
+}
+
 export {
     findAll,
-    create
+    create,
+    remove
 }
