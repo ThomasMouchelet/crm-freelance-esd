@@ -7,11 +7,10 @@ function findAll(){
 
 function create(credentials) {
     const customer = `/api/customers/${credentials.customer}`
+    
     credentials = {
         ...credentials,
-        sendingAt: new Date(),
-        customer,
-        amount: parseInt(credentials.amount)
+        customer
     }
     
     return api.post('/invoices', credentials )

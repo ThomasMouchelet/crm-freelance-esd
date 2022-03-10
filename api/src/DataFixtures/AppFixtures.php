@@ -26,8 +26,8 @@ class AppFixtures extends Fixture
             for ($j=0; $j < rand(2, 9); $j++) { 
                 $invoice = new Invoice();
                 $invoice
-                    ->setAmount($faker->numberBetween(900, 8000))
-                    ->setSendingAt($faker->dateTimeBetween("-4 week", "+2 week"))
+                    ->setAmount(strval($faker->numberBetween(900, 8000)))
+                    ->setSendingAt($faker->dateTimeBetween("-4 week", "-1 week"))
                     ->setStatus(STATUS[rand(0,2)])
                     ->setCustomer($customer)
                 ;

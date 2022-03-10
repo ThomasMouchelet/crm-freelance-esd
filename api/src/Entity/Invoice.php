@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Controller\CreateInvoiceController;
+use App\Controller\ThomasController;
 use App\Repository\InvoiceRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -12,9 +14,16 @@ use Symfony\Component\Serializer\Annotation\Groups;
         "GET" => [
             "normalization_context" => ["groups" => "read:Invoice:collection"]
         ],
-        "POST"
+        "POST" => [
+            "controller" => CreateInvoiceController::class
+        ],
+        "thomas" => [
+            "method" => "GET",
+            "path" => "/invoices/thomas",
+            "controller" => ThomasController::class
+        ]
     ],
-    order: ["id" => "DESC"]
+    order: ["sendingAt" => "DESC"]
 )]
 #[ORM\Entity(repositoryClass: InvoiceRepository::class)]
 class Invoice
@@ -32,7 +41,7 @@ class Invoice
         "read:Customer:item",
         "read:Invoice:collection"
     ])]
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'string')]
     private $amount;
 
     #[Groups([
@@ -61,12 +70,12 @@ class Invoice
         return $this->id;
     }
 
-    public function getAmount(): ?int
+    public function getAmount(): ?string
     {
         return $this->amount;
     }
 
-    public function setAmount(int $amount): self
+    public function setAmount(string $amount): self
     {
         $this->amount = $amount;
 
